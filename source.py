@@ -8,12 +8,10 @@ from flair.trainers import ModelTrainer
 
 # Create a DataFrame with clickbait and non-clickbait headlines
 with open("data/clickbait_data") as file:
-    cb_lines = [Sentence(line.rstrip()) for line in file if
-                line.rstrip() != '']
+    cb_lines = [line.rstrip() for line in file if line.rstrip() != '']
 
 with open("data/non_clickbait_data") as file:
-    non_cb_lines = [Sentence(line.rstrip()) for line in file if
-                    line.rstrip() != '']
+    non_cb_lines = [line.rstrip() for line in file if line.rstrip() != '']
 
 cb = pd.DataFrame(zip(['__label__cb' for _ in range(len(cb_lines))], cb_lines),
                   columns=['text', 'label'])
@@ -62,7 +60,8 @@ sentences = [Sentence(
         'Covid-19: CDC warns against travel to 22 countries including Australia and Israel'),
     Sentence('Summer breaks: 20 of the best self-catering stays in the UK'),
     Sentence('Our choices for self-catering stays in the UK'),
-    Sentence("Corona Centennial leads The Times' top 25 prep basketball rankings"),
+    Sentence(
+        "Corona Centennial leads The Times' top 25 prep basketball rankings"),
     Sentence('18 Times When Stop Clickbait Has Saved the Day')
 ]
 
