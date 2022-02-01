@@ -1,4 +1,4 @@
-# text-classification
+# Text Classification
 
 ## Description
 
